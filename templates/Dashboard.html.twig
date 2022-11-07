@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./custom.js"></script>
+</head>
+
+<body>
+
+<div>
+    <h1>DashBoard Page</h1>
+    <table cellspacing="2" border = "1">
+    <tr style="text-align:center;">
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>Profile Type</th>
+        <th>Hobbies</th>
+        <th>View Document</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    {% for emp in employee %}
+        <tr style="text-align:center;">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.phone }}</td>
+            <td>{{ emp.profileType }}</td>
+            <td>{{ emp.hobbies }}</td>
+            <td><button type="button"  id="btnID">View</button></td>
+            <td><a href="index.php?edit={{ emp.id }}">Edit</a></td>
+            <td><a href="?del={{ emp.id }}">Delete</a></td>
+            <td><img id="image" src="./document/{{ emp.file }}" class="image" alt=""></td>
+        </tr>
+    {% endfor %}
+
+    </table>
+</div>
+</br>
+
+<div>
+
+</div>
+
+<a href="./index.php" style="border:2px solid red; padding:5px 10px; border-radius:10px;background-color:red;color:white">HOME</a>
+
+
+</body>
+
+</html>
+
+
+

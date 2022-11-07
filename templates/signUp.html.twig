@@ -1,0 +1,74 @@
+
+<div >
+
+        <h1>Registration Page</h1>
+  
+
+    <form class="theForm" method = "POST" id="beniSignUp" enctype="multipart/form-data">
+
+        <table class="container" style="margin-left: 165px;" border = "1">
+
+            <tr>
+                <td><th>Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </th></td>
+                <td><input type="text" id="name" name="name" value="{{ record.name }}" required></td>
+            </tr>
+            <tr>
+                <td><th>Registration No</th></td>
+                <td><input type="text" id="reg_no" name="reg_no" ></td>
+            </tr>
+            <tr>
+                <td><th>Email</th></td>
+                <td><input type="email" id="email" name="email"></td>
+            </tr>
+            <tr>
+                <td><th>Password</th></td>
+                <td><input type="password" id="password" name="password" ></td>
+            </tr>
+            <tr>
+            <tr>
+                <td><th>Phone No</th></td>
+                <td><input type="tel" id="phone" name="phone" value="{{data.phone}}"></td>
+            </tr>
+            <tr>
+                <td><th>State</th></td>
+                <td>
+                    <select name="profileType" id="Type" >
+                        <option value="">--Choose State--</option>
+                        {% for type in status %}
+                            <option value="{{ type }}" >{{ type }} </option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><th>Hobbies</th></td>
+                <td>
+                    <input type="checkbox" id="Dancing" name="hobbie" value="Dancing">
+                    <label for="Dancing">Dancing</label><br>
+                    <input type="checkbox" id="Singing" name="hobbie" value="Singing">
+                    <label for="Singing">Singing</label><br>
+                </td> 
+            </tr>
+            <tr>
+                <td><th>Upload File</th></td>
+                <td><input type="file" name="file" id=""></td>
+            </tr>
+        </table>
+        <div style="margin:10px 0 0 0;">
+        <input type="submit" name="signup" style="margin-left:200px">
+        </div>
+    </form>
+</div>
+
+</br>
+</br>
+</br>
+<span> <h3 style="display:inline-block">Go To Dashboard Page</h3></span>
+<a href="./Dashboard.php" style="border:2px solid red; padding:5px 10px; border-radius:10px;background-color:red;color:white">DASHBOARD</a>
+
+
+<style>
+th{
+    text-align:left;
+}
+</style>
